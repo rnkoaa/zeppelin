@@ -1,0 +1,173 @@
+{
+  "paragraphs": [
+    {
+      "text": "import org.apache.spark.sql.SQLContext",
+      "user": "anonymous",
+      "dateUpdated": "2019-04-13 22:59:11.610",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "import org.apache.spark.sql.SQLContext\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1555194611652_-1262754247",
+      "id": "20190413-223011_1164649449",
+      "dateCreated": "2019-04-13 22:30:11.652",
+      "dateStarted": "2019-04-13 22:59:11.661",
+      "dateFinished": "2019-04-13 22:59:12.193",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val df \u003d sqlContext.read.\noptions(Map(\"header\" -\u003e \"true\", \"inferSchema\" -\u003e \"true\")).\ncsv(\"data/flights.csv\")\n\ndf.printSchema\n\n// val sqlContext \u003d new SQLContext(sc)\n// val df \u003d sqlContext.read\n//     .format(\"com.databricks.spark.csv\")\n//     .option(\"header\", \"true\") // Use first line of all files as header\n//     .option(\"inferSchema\", \"true\") // Automatically infer data types\n//     .load(\"data/flights.csv\")",
+      "user": "anonymous",
+      "dateUpdated": "2019-04-13 23:07:16.484",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- Year: integer (nullable \u003d true)\n |-- Month: integer (nullable \u003d true)\n |-- DayofMonth: integer (nullable \u003d true)\n |-- DayOfWeek: integer (nullable \u003d true)\n |-- DepTime: string (nullable \u003d true)\n |-- CRSDepTime: integer (nullable \u003d true)\n |-- ArrTime: string (nullable \u003d true)\n |-- CRSArrTime: integer (nullable \u003d true)\n |-- UniqueCarrier: string (nullable \u003d true)\n |-- FlightNum: integer (nullable \u003d true)\n |-- TailNum: string (nullable \u003d true)\n |-- ActualElapsedTime: string (nullable \u003d true)\n |-- CRSElapsedTime: integer (nullable \u003d true)\n |-- AirTime: string (nullable \u003d true)\n |-- ArrDelay: string (nullable \u003d true)\n |-- DepDelay: string (nullable \u003d true)\n |-- Origin: string (nullable \u003d true)\n |-- Dest: string (nullable \u003d true)\n |-- Distance: integer (nullable \u003d true)\n |-- TaxiIn: string (nullable \u003d true)\n |-- TaxiOut: string (nullable \u003d true)\n |-- Cancelled: integer (nullable \u003d true)\n |-- CancellationCode: string (nullable \u003d true)\n |-- Diverted: integer (nullable \u003d true)\n |-- CarrierDelay: string (nullable \u003d true)\n |-- WeatherDelay: string (nullable \u003d true)\n |-- NASDelay: string (nullable \u003d true)\n |-- SecurityDelay: string (nullable \u003d true)\n |-- LateAircraftDelay: string (nullable \u003d true)\n\ndf: org.apache.spark.sql.DataFrame \u003d [Year: int, Month: int ... 27 more fields]\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://172.30.0.2:4041/jobs/job?id\u003d0",
+            "http://172.30.0.2:4041/jobs/job?id\u003d1"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1555195508459_-2044229024",
+      "id": "20190413-224508_883355700",
+      "dateCreated": "2019-04-13 22:45:08.459",
+      "dateStarted": "2019-04-13 23:07:16.563",
+      "dateFinished": "2019-04-13 23:07:56.784",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "df.show",
+      "user": "anonymous",
+      "dateUpdated": "2019-04-14 00:37:23.478",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----+-----+----------+---------+-------+----------+-------+----------+-------------+---------+-------+-----------------+--------------+-------+--------+--------+------+----+--------+------+-------+---------+----------------+--------+------------+------------+--------+-------------+-----------------+\n|Year|Month|DayofMonth|DayOfWeek|DepTime|CRSDepTime|ArrTime|CRSArrTime|UniqueCarrier|FlightNum|TailNum|ActualElapsedTime|CRSElapsedTime|AirTime|ArrDelay|DepDelay|Origin|Dest|Distance|TaxiIn|TaxiOut|Cancelled|CancellationCode|Diverted|CarrierDelay|WeatherDelay|NASDelay|SecurityDelay|LateAircraftDelay|\n+----+-----+----------+---------+-------+----------+-------+----------+-------------+---------+-------+-----------------+--------------+-------+--------+--------+------+----+--------+------+-------+---------+----------------+--------+------------+------------+--------+-------------+-----------------+\n|2008|    1|         3|        4|   2003|      1955|   2211|      2225|           WN|      335| N712SW|              128|           150|    116|     -14|       8|   IAD| TPA|     810|     4|      8|        0|            null|       0|          NA|          NA|      NA|           NA|               NA|\n|2008|    1|         3|        4|    754|       735|   1002|      1000|           WN|     3231| N772SW|              128|           145|    113|       2|      19|   IAD| TPA|     810|     5|     10|        0|            null|       0|          NA|          NA|      NA|           NA|               NA|\n|2008|    1|         3|        4|    628|       620|    804|       750|           WN|      448| N428WN|               96|            90|     76|      14|       8|   IND| BWI|     515|     3|     17|        0|            null|       0|          NA|          NA|      NA|           NA|               NA|\n|2008|    1|         3|        4|    926|       930|   1054|      1100|           WN|     1746| N612SW|               88|            90|     78|      -6|      -4|   IND| BWI|     515|     3|      7|        0|            null|       0|          NA|          NA|      NA|           NA|               NA|\n|2008|    1|         3|        4|   1829|      1755|   1959|      1925|           WN|     3920| N464WN|               90|            90|     77|      34|      34|   IND| BWI|     515|     3|     10|        0|            null|       0|           2|           0|       0|            0|               32|\n|2008|    1|         3|        4|   1940|      1915|   2121|      2110|           WN|      378| N726SW|              101|           115|     87|      11|      25|   IND| JAX|     688|     4|     10|        0|            null|       0|          NA|          NA|      NA|           NA|               NA|\n|2008|    1|         3|        4|   1937|      1830|   2037|      1940|           WN|      509| N763SW|              240|           250|    230|      57|      67|   IND| LAS|    1591|     3|      7|        0|            null|       0|          10|           0|       0|            0|               47|\n|2008|    1|         3|        4|   1039|      1040|   1132|      1150|           WN|      535| N428WN|              233|           250|    219|     -18|      -1|   IND| LAS|    1591|     7|      7|        0|            null|       0|          NA|          NA|      NA|           NA|               NA|\n|2008|    1|         3|        4|    617|       615|    652|       650|           WN|       11| N689SW|               95|            95|     70|       2|       2|   IND| MCI|     451|     6|     19|        0|            null|       0|          NA|          NA|      NA|           NA|               NA|\n|2008|    1|         3|        4|   1620|      1620|   1639|      1655|           WN|      810| N648SW|               79|            95|     70|     -16|       0|   IND| MCI|     451|     3|      6|        0|            null|       0|          NA|          NA|      NA|           NA|               NA|\n|2008|    1|         3|        4|    706|       700|    916|       915|           WN|      100| N690SW|              130|           135|    106|       1|       6|   IND| MCO|     828|     5|     19|        0|            null|       0|          NA|          NA|      NA|           NA|               NA|\n|2008|    1|         3|        4|   1644|      1510|   1845|      1725|           WN|     1333| N334SW|              121|           135|    107|      80|      94|   IND| MCO|     828|     6|      8|        0|            null|       0|           8|           0|       0|            0|               72|\n|2008|    1|         3|        4|   1426|      1430|   1426|      1425|           WN|      829| N476WN|               60|            55|     39|       1|      -4|   IND| MDW|     162|     9|     12|        0|            null|       0|          NA|          NA|      NA|           NA|               NA|\n|2008|    1|         3|        4|    715|       715|    720|       710|           WN|     1016| N765SW|               65|            55|     37|      10|       0|   IND| MDW|     162|     7|     21|        0|            null|       0|          NA|          NA|      NA|           NA|               NA|\n|2008|    1|         3|        4|   1702|      1700|   1651|      1655|           WN|     1827| N420WN|               49|            55|     35|      -4|       2|   IND| MDW|     162|     4|     10|        0|            null|       0|          NA|          NA|      NA|           NA|               NA|\n|2008|    1|         3|        4|   1029|      1020|   1021|      1010|           WN|     2272| N263WN|               52|            50|     37|      11|       9|   IND| MDW|     162|     6|      9|        0|            null|       0|          NA|          NA|      NA|           NA|               NA|\n|2008|    1|         3|        4|   1452|      1425|   1640|      1625|           WN|      675| N286WN|              228|           240|    213|      15|      27|   IND| PHX|    1489|     7|      8|        0|            null|       0|           3|           0|       0|            0|               12|\n|2008|    1|         3|        4|    754|       745|    940|       955|           WN|     1144| N778SW|              226|           250|    205|     -15|       9|   IND| PHX|    1489|     5|     16|        0|            null|       0|          NA|          NA|      NA|           NA|               NA|\n|2008|    1|         3|        4|   1323|      1255|   1526|      1510|           WN|        4| N674AA|              123|           135|    110|      16|      28|   IND| TPA|     838|     4|      9|        0|            null|       0|           0|           0|       0|            0|               16|\n|2008|    1|         3|        4|   1416|      1325|   1512|      1435|           WN|       54| N643SW|               56|            70|     49|      37|      51|   ISP| BWI|     220|     2|      5|        0|            null|       0|          12|           0|       0|            0|               25|\n+----+-----+----------+---------+-------+----------+-------+----------+-------------+---------+-------+-----------------+--------------+-------+--------+--------+------+----+--------+------+-------+---------+----------------+--------+------------+------------+--------+-------------+-----------------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://172.30.0.2:4041/jobs/job?id\u003d2"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1555196358113_276527272",
+      "id": "20190413-225918_1975196591",
+      "dateCreated": "2019-04-13 22:59:18.113",
+      "dateStarted": "2019-04-14 00:37:23.615",
+      "dateFinished": "2019-04-14 00:37:25.070",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1555202243478_-1073056844",
+      "id": "20190414-003723_1976983107",
+      "dateCreated": "2019-04-14 00:37:23.478",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "flights-csv",
+  "id": "2E821NU2U",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {}
+}
