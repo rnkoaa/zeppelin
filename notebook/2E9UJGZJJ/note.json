@@ -1,0 +1,385 @@
+{
+  "paragraphs": [
+    {
+      "text": "val passwords \u003d spark\n    .read\n    .option(\"header\", \"true\")\n    .option(\"inferSchema\", \"true\")\n    .csv(\"data/passwords/*.csv\")\n\npasswords.printSchema()",
+      "user": "anonymous",
+      "dateUpdated": "2019-04-14 02:48:18.019",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- password: string (nullable \u003d true)\n |-- hash: string (nullable \u003d true)\n |-- count: integer (nullable \u003d true)\n\npasswords: org.apache.spark.sql.DataFrame \u003d [password: string, hash: string ... 1 more field]\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://172.30.0.2:4041/jobs/job?id\u003d3",
+            "http://172.30.0.2:4041/jobs/job?id\u003d4",
+            "http://172.30.0.2:4041/jobs/job?id\u003d5",
+            "http://172.30.0.2:4041/jobs/job?id\u003d6"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1555210037547_1454273024",
+      "id": "20190414-024717_684089831",
+      "dateCreated": "2019-04-14 02:47:17.547",
+      "dateStarted": "2019-04-14 02:48:18.072",
+      "dateFinished": "2019-04-14 02:48:28.606",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "passwords.count",
+      "user": "anonymous",
+      "dateUpdated": "2019-04-14 02:48:51.162",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res5: Long \u003d 684413\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://172.30.0.2:4041/jobs/job?id\u003d7"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1555210074161_1084354819",
+      "id": "20190414-024754_1344891265",
+      "dateCreated": "2019-04-14 02:47:54.162",
+      "dateStarted": "2019-04-14 02:48:51.251",
+      "dateFinished": "2019-04-14 02:48:55.246",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "passwords.select(\"password\", \"count\").orderBy(desc(\"count\")).show()\n",
+      "user": "anonymous",
+      "dateUpdated": "2019-04-14 02:49:20.629",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+----------+--------+\n|  password|   count|\n+----------+--------+\n|    123456|20760336|\n| 123456789| 7016669|\n|    qwerty| 3599486|\n|    111111| 2900049|\n|  12345678| 2680521|\n|    abc123| 2670319|\n|   1234567| 2298084|\n|     12345| 2088998|\n|1234567890| 2075018|\n|    123123| 2048411|\n|    000000| 1832944|\n|  iloveyou| 1462146|\n|      1234| 1143408|\n|1q2w3e4r5t| 1109333|\n|qwertyuiop| 1028295|\n|       123|  977827|\n|    monkey|  932064|\n|   123456a|  928360|\n|    dragon|  913822|\n|    123321|  856401|\n+----------+--------+\nonly showing top 20 rows\n\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://172.30.0.2:4041/jobs/job?id\u003d8"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1555210131162_1173377915",
+      "id": "20190414-024851_971892374",
+      "dateCreated": "2019-04-14 02:48:51.162",
+      "dateStarted": "2019-04-14 02:49:20.695",
+      "dateFinished": "2019-04-14 02:49:24.918",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "import org.apache.spark.sql.functions.{length, col}\n\nval passwordsWithLength \u003d passwords.withColumn(\"len\", length(col(\"password\")))\n\npasswordsWithLength\n    .where(col(\"len\") \u003c 12)\n    .groupBy(col(\"len\"))\n    .agg(sum(col(\"count\")).as(\"count\"))\n    .orderBy(col(\"count\").desc)\n    .show()",
+      "user": "anonymous",
+      "dateUpdated": "2019-04-14 02:50:11.105",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "+---+---------+\n|len|    count|\n+---+---------+\n|  6|289307757|\n|  8|202309201|\n|  7|154373305|\n|  9| 67137935|\n| 10| 36156110|\n|  5| 29615268|\n|  4| 25097113|\n| 11|  5118380|\n|  3|  4941666|\n|  1|    33864|\n+---+---------+\n\nimport org.apache.spark.sql.functions.{length, col}\npasswordsWithLength: org.apache.spark.sql.DataFrame \u003d [password: string, hash: string ... 2 more fields]\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://172.30.0.2:4041/jobs/job?id\u003d9"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1555210160629_972935706",
+      "id": "20190414-024920_1375831346",
+      "dateCreated": "2019-04-14 02:49:20.629",
+      "dateStarted": "2019-04-14 02:50:11.202",
+      "dateFinished": "2019-04-14 02:50:20.099",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "passwordsWithLength.createOrReplaceTempView(\"passwords\")",
+      "user": "anonymous",
+      "dateUpdated": "2019-04-14 02:51:07.762",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "paragraph_1555210211105_688576432",
+      "id": "20190414-025011_2141140885",
+      "dateCreated": "2019-04-14 02:50:11.106",
+      "dateStarted": "2019-04-14 02:51:07.836",
+      "dateFinished": "2019-04-14 02:51:08.799",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\nSELECT\nlen,\nsum(count) as count\nFROM\npasswords\nGROUP BY len\nORDER BY len",
+      "user": "anonymous",
+      "dateUpdated": "2019-04-14 09:34:51.082",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "pieChart",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "len": "string",
+                      "count": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                },
+                "stackedAreaChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                }
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "len",
+                  "index": 0.0,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [],
+              "values": [
+                {
+                  "name": "count",
+                  "index": 1.0,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "len\tcount\n1\t33864\n3\t4941666\n4\t25097113\n5\t29615268\n6\t289307757\n7\t154373305\n8\t202309201\n9\t67137935\n10\t36156110\n11\t5118380\n12\t3443819\n13\t783707\n14\t340307\n15\t193296\n16\t264195\n17\t23060\n18\t110661\n19\t22340\n20\t66020\n21\t1525\n22\t729\n23\t169\n24\t208\n25\t36\n26\t4123\n27\t895\n"
+          },
+          {
+            "type": "TEXT",
+            "data": ""
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://172.30.0.2:4041/jobs/job?id\u003d10"
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1555210267762_1426904946",
+      "id": "20190414-025107_1463778793",
+      "dateCreated": "2019-04-14 02:51:07.763",
+      "dateStarted": "2019-04-14 02:51:28.694",
+      "dateFinished": "2019-04-14 02:51:35.964",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\n",
+      "user": "anonymous",
+      "dateUpdated": "2019-04-14 02:51:28.600",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1555210288597_554744144",
+      "id": "20190414-025128_105118654",
+      "dateCreated": "2019-04-14 02:51:28.597",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "password",
+  "id": "2E9UJGZJJ",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "spark:shared_process": [],
+    "spark-csv:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

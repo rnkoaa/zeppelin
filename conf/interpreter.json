@@ -2079,6 +2079,31 @@
       "groovy",
       "neo4j",
       "sap"
+    ],
+    "2E9UJGZJJ": [
+      "spark",
+      "spark-cassandra",
+      "spark-csv",
+      "md",
+      "angular",
+      "sh",
+      "livy",
+      "alluxio",
+      "file",
+      "flink",
+      "python",
+      "ignite",
+      "lens",
+      "cassandra",
+      "kylin",
+      "elasticsearch",
+      "jdbc",
+      "hbase",
+      "bigquery",
+      "pig",
+      "groovy",
+      "neo4j",
+      "sap"
     ]
   },
   "interpreterRepositories": [
