@@ -1,0 +1,69 @@
+{
+  "paragraphs": [
+    {
+      "text": "val genres \u003d \"Action|Adventure|Romance\"\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2019-04-21 13:05:57.166",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "genres: String \u003d Action|Adventure|Romance\nres1: Array[String] \u003d Array(Action, Adventure, Romance)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1555851825402_-639128618",
+      "id": "20190421-130345_2037334991",
+      "dateCreated": "2019-04-21 13:03:45.402",
+      "dateStarted": "2019-04-21 13:04:31.857",
+      "dateFinished": "2019-04-21 13:05:07.142",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "user": "anonymous",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1555851871758_997316338",
+      "id": "20190421-130431_1774886968",
+      "dateCreated": "2019-04-21 13:04:31.758",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "scala",
+  "id": "2E9GTH722",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "spark-cassandra:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

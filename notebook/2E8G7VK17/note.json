@@ -1,0 +1,217 @@
+{
+  "paragraphs": [
+    {
+      "text": "%spark\n\nval df \u003d sqlContext.read.\noptions(Map(\"header\" -\u003e \"true\", \"inferSchema\" -\u003e \"true\")).\ncsv(\"data/ml-latest/movies.csv\")\n\ndf.printSchema",
+      "user": "anonymous",
+      "dateUpdated": "2019-04-21 03:07:22.983",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "root\n |-- movieId: integer (nullable \u003d true)\n |-- title: string (nullable \u003d true)\n |-- genres: string (nullable \u003d true)\n\ndf: org.apache.spark.sql.DataFrame \u003d [movieId: int, title: string ... 1 more field]\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://172.30.0.3:4040/jobs/job?id\u003d2",
+            "http://172.30.0.3:4040/jobs/job?id\u003d3"
+          ],
+          "interpreterSettingId": "spark-cassandra"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1555815923017_-1191469438",
+      "id": "20190421-030523_1813634676",
+      "dateCreated": "2019-04-21 03:05:23.018",
+      "dateStarted": "2019-04-21 03:07:23.062",
+      "dateFinished": "2019-04-21 03:07:25.114",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\n\ncase class Movie(id: Int, title: String, genres: List[string], year: Int) {\n    def this(id, title, genres, 0)\n}\n\nobject Movie {\n    def apply(id: Int, title: String, genres: List[string]) {\n        return Movie(id, title, genres)\n    }\n}\n\nval rdd \u003d df.rdd.cache()",
+      "user": "anonymous",
+      "dateUpdated": "2019-04-21 12:00:11.982",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1555815941162_1075432473",
+      "id": "20190421-030541_958138769",
+      "dateCreated": "2019-04-21 03:05:41.162",
+      "dateStarted": "2019-04-21 12:00:12.064",
+      "dateFinished": "2019-04-21 12:00:12.102",
+      "status": "ERROR",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\n\nval mRdd \u003d rdd.filter(s \u003d\u003e s(1).toString.indexOf(\"(\") \u003e 0)\n\nval noYear \u003d rdd.filter(s \u003d\u003e s(1).toString.indexOf(\"(\") \u003c 0)",
+      "user": "anonymous",
+      "dateUpdated": "2019-04-21 12:02:52.152",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "mRdd: org.apache.spark.rdd.RDD[org.apache.spark.sql.Row] \u003d MapPartitionsRDD[25] at filter at \u003cconsole\u003e:29\nnoYear: org.apache.spark.rdd.RDD[org.apache.spark.sql.Row] \u003d MapPartitionsRDD[26] at filter at \u003cconsole\u003e:31\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1555817092053_-785918859",
+      "id": "20190421-032452_898571664",
+      "dateCreated": "2019-04-21 03:24:52.053",
+      "dateStarted": "2019-04-21 12:02:52.198",
+      "dateFinished": "2019-04-21 12:02:53.084",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\nnoYear.take(10).foreach(println)",
+      "user": "anonymous",
+      "dateUpdated": "2019-04-21 12:07:01.807",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "[32930,Category 6: Day of Destruction,Action|Drama]\n[40697,Babylon 5,Sci-Fi]\n[112406,Brazil: In the Shadow of the Stadiums,Documentary]\n[113190,Slaying the Badger,Documentary]\n[115133,Tatort: Im Schmerz geboren,Crime]\n[123619,Terrible Joe Moran,(no genres listed)]\n[125571,The Court-Martial of Jackie Robinson,(no genres listed)]\n[125632,In Our Garden,(no genres listed)]\n[125958,Stephen Fry In America - New World,(no genres listed)]\n[126438,Two: The Story of Roman \u0026 Nyro,Documentary|Drama]\n"
+          }
+        ]
+      },
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            "http://172.30.0.3:4040/jobs/job?id\u003d10"
+          ],
+          "interpreterSettingId": "spark-cassandra"
+        }
+      },
+      "apps": [],
+      "jobName": "paragraph_1555817979889_-806901769",
+      "id": "20190421-033939_1860930465",
+      "dateCreated": "2019-04-21 03:39:39.889",
+      "dateStarted": "2019-04-21 12:07:01.860",
+      "dateFinished": "2019-04-21 12:07:02.832",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\nnoYear.map(m \u003d\u003e {\n    val id \u003d m(0).toInt\n    val title \u003d m(1).toString\n    val genres \u003d m(2).toString\n    Movie()\n})",
+      "user": "anonymous",
+      "dateUpdated": "2019-04-21 13:30:58.019",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1555848075051_892833250",
+      "id": "20190421-120115_556677428",
+      "dateCreated": "2019-04-21 12:01:15.052",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "film",
+  "id": "2E8G7VK17",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {
+    "spark-cassandra:shared_process": [],
+    "spark:shared_process": []
+  },
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}
