@@ -3,7 +3,7 @@
     {
       "text": "%spark\n\nval df \u003d sqlContext.read.\noptions(Map(\"header\" -\u003e \"true\", \"inferSchema\" -\u003e \"true\")).\ncsv(\"data/ml-latest/movies.csv\")\n\ndf.printSchema",
       "user": "anonymous",
-      "dateUpdated": "2019-04-21 03:07:22.983",
+      "dateUpdated": "2019-04-24 06:13:14.362",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -37,25 +37,25 @@
           "tooltip": "View in Spark web UI",
           "group": "spark",
           "values": [
-            "http://172.30.0.3:4040/jobs/job?id\u003d2",
-            "http://172.30.0.3:4040/jobs/job?id\u003d3"
+            "http://172.30.0.3:4040/jobs/job?id\u003d0",
+            "http://172.30.0.3:4040/jobs/job?id\u003d1"
           ],
-          "interpreterSettingId": "spark-cassandra"
+          "interpreterSettingId": "spark"
         }
       },
       "apps": [],
       "jobName": "paragraph_1555815923017_-1191469438",
       "id": "20190421-030523_1813634676",
       "dateCreated": "2019-04-21 03:05:23.018",
-      "dateStarted": "2019-04-21 03:07:23.062",
-      "dateFinished": "2019-04-21 03:07:25.114",
+      "dateStarted": "2019-04-24 06:13:14.428",
+      "dateFinished": "2019-04-24 06:13:51.298",
       "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
-      "text": "%spark\n\ncase class Movie(id: Int, title: String, genres: List[string], year: Int) {\n    def this(id, title, genres, 0)\n}\n\nobject Movie {\n    def apply(id: Int, title: String, genres: List[string]) {\n        return Movie(id, title, genres)\n    }\n}\n\nval rdd \u003d df.rdd.cache()",
+      "text": "%spark\ncase class Person(id: Int)",
       "user": "anonymous",
-      "dateUpdated": "2019-04-21 12:00:11.982",
+      "dateUpdated": "2019-04-24 06:13:54.395",
       "config": {
         "colWidth": 12.0,
         "fontSize": 9.0,
@@ -73,14 +73,130 @@
         "params": {},
         "forms": {}
       },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "defined class Person\n"
+          }
+        ]
+      },
       "apps": [],
-      "jobName": "paragraph_1555815941162_1075432473",
-      "id": "20190421-030541_958138769",
-      "dateCreated": "2019-04-21 03:05:41.162",
-      "dateStarted": "2019-04-21 12:00:12.064",
-      "dateFinished": "2019-04-21 12:00:12.102",
-      "status": "ERROR",
-      "errorMessage": "",
+      "jobName": "paragraph_1556079345798_1198136905",
+      "id": "20190424-041545_1578912372",
+      "dateCreated": "2019-04-24 04:15:45.799",
+      "dateStarted": "2019-04-24 06:13:54.472",
+      "dateFinished": "2019-04-24 06:13:55.745",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%cassandra\nSELECT * from system_schema.keyspaces;\n",
+      "user": "anonymous",
+      "dateUpdated": "2019-04-24 06:19:09.349",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300.0,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "keyspace_name": "string",
+                      "durable_writes": "string",
+                      "replication": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/undefined"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "keyspace_name\tdurable_writes\treplication\nsystem_auth\ttrue\t{class\u003dorg.apache.cassandra.locator.SimpleStrategy, replication_factor\u003d1}\nsystem_schema\ttrue\t{class\u003dorg.apache.cassandra.locator.LocalStrategy}\nsystem_distributed\ttrue\t{class\u003dorg.apache.cassandra.locator.SimpleStrategy, replication_factor\u003d3}\nsystem\ttrue\t{class\u003dorg.apache.cassandra.locator.LocalStrategy}\nsystem_traces\ttrue\t{class\u003dorg.apache.cassandra.locator.SimpleStrategy, replication_factor\u003d2}\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1556086516208_1772443179",
+      "id": "20190424-061516_1663631649",
+      "dateCreated": "2019-04-24 06:15:16.209",
+      "dateStarted": "2019-04-24 06:17:49.184",
+      "dateFinished": "2019-04-24 06:17:49.223",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "sc.version",
+      "user": "anonymous",
+      "dateUpdated": "2019-04-23 05:10:49.472",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res1: String \u003d 2.2.1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1555992431086_1010629072",
+      "id": "20190423-040711_109316086",
+      "dateCreated": "2019-04-23 04:07:11.086",
+      "dateStarted": "2019-04-23 05:10:49.509",
+      "dateFinished": "2019-04-23 05:10:50.013",
+      "status": "FINISHED",
       "progressUpdateIntervalMs": 500
     },
     {
@@ -152,18 +268,6 @@
           }
         ]
       },
-      "runtimeInfos": {
-        "jobUrl": {
-          "propertyName": "jobUrl",
-          "label": "SPARK JOB",
-          "tooltip": "View in Spark web UI",
-          "group": "spark",
-          "values": [
-            "http://172.30.0.3:4040/jobs/job?id\u003d10"
-          ],
-          "interpreterSettingId": "spark-cassandra"
-        }
-      },
       "apps": [],
       "jobName": "paragraph_1555817979889_-806901769",
       "id": "20190421-033939_1860930465",
@@ -207,11 +311,13 @@
   "noteParams": {},
   "noteForms": {},
   "angularObjects": {
-    "spark-cassandra:shared_process": [],
-    "spark:shared_process": []
+    "spark:shared_process": [],
+    "cassandra:shared_process": []
   },
   "config": {
-    "isZeppelinNotebookCronEnable": false
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
   },
   "info": {}
 }

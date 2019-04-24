@@ -40,16 +40,213 @@
       "progressUpdateIntervalMs": 500
     },
     {
+      "text": "case class Person(id: Int)\n\nval p \u003d Person(1)\nprintln(p)",
       "user": "anonymous",
+      "dateUpdated": "2019-04-23 04:29:21.723",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Person(1)\ndefined class Person\np: Person \u003d Person(1)\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1555851871758_997316338",
+      "id": "20190421-130431_1774886968",
+      "dateCreated": "2019-04-21 13:04:31.758",
+      "dateStarted": "2019-04-23 04:29:21.768",
+      "dateFinished": "2019-04-23 04:29:22.756",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "println(p.id)",
+      "user": "anonymous",
+      "dateUpdated": "2019-04-23 03:59:51.433",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1555991974386_1265622841",
+      "id": "20190423-035934_217926576",
+      "dateCreated": "2019-04-23 03:59:34.386",
+      "dateStarted": "2019-04-23 03:59:51.479",
+      "dateFinished": "2019-04-23 03:59:52.090",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\n\nprintln(p.id)",
+      "user": "anonymous",
+      "dateUpdated": "2019-04-23 04:00:08.016",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "1\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1555991991433_-1290473775",
+      "id": "20190423-035951_294496297",
+      "dateCreated": "2019-04-23 03:59:51.433",
+      "dateStarted": "2019-04-23 04:00:08.059",
+      "dateFinished": "2019-04-23 04:00:08.508",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\n\ncase class Movie(id: Int, title: String)",
+      "user": "anonymous",
+      "dateUpdated": "2019-04-23 04:00:31.006",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "defined class Movie\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1555992008016_-1948537425",
+      "id": "20190423-040008_50722863",
+      "dateCreated": "2019-04-23 04:00:08.016",
+      "dateStarted": "2019-04-23 04:00:31.086",
+      "dateFinished": "2019-04-23 04:00:31.896",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\ncase class Movie(id: Int)",
+      "user": "anonymous",
+      "dateUpdated": "2019-04-23 04:29:42.857",
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "defined class Movie\n"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "paragraph_1555992031006_1753728679",
+      "id": "20190423-040031_1992155422",
+      "dateCreated": "2019-04-23 04:00:31.006",
+      "dateStarted": "2019-04-23 04:29:42.897",
+      "dateFinished": "2019-04-23 04:29:43.358",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\n",
+      "user": "anonymous",
+      "dateUpdated": "2019-04-23 04:29:42.861",
       "config": {},
       "settings": {
         "params": {},
         "forms": {}
       },
       "apps": [],
-      "jobName": "paragraph_1555851871758_997316338",
-      "id": "20190421-130431_1774886968",
-      "dateCreated": "2019-04-21 13:04:31.758",
+      "jobName": "paragraph_1555993782857_-167725067",
+      "id": "20190423-042942_317206058",
+      "dateCreated": "2019-04-23 04:29:42.857",
       "status": "READY",
       "progressUpdateIntervalMs": 500
     }

@@ -409,221 +409,6 @@
         "isUserImpersonate": false
       }
     },
-    "spark-cassandra": {
-      "id": "spark-cassandra",
-      "name": "spark-cassandra",
-      "group": "spark",
-      "properties": {
-        "zeppelin.spark.concurrentSQL": {
-          "name": "zeppelin.spark.concurrentSQL",
-          "value": false,
-          "type": "checkbox"
-        },
-        "zeppelin.R.knitr": {
-          "name": "zeppelin.R.knitr",
-          "value": true,
-          "type": "checkbox"
-        },
-        "zeppelin.R.cmd": {
-          "name": "zeppelin.R.cmd",
-          "value": "R",
-          "type": "string"
-        },
-        "spark.cassandra.connection.host": {
-          "name": "spark.cassandra.connection.host",
-          "value": "cassandra",
-          "type": "string"
-        },
-        "zeppelin.R.image.width": {
-          "name": "zeppelin.R.image.width",
-          "value": "100%",
-          "type": "number"
-        },
-        "zeppelin.spark.importImplicit": {
-          "name": "zeppelin.spark.importImplicit",
-          "value": true,
-          "type": "checkbox"
-        },
-        "zeppelin.dep.additionalRemoteRepository": {
-          "name": "zeppelin.dep.additionalRemoteRepository",
-          "value": "spark-packages,http://dl.bintray.com/spark-packages/maven,false;",
-          "type": "textarea"
-        },
-        "zeppelin.dep.localrepo": {
-          "name": "zeppelin.dep.localrepo",
-          "value": "local-repo",
-          "type": "string"
-        },
-        "zeppelin.spark.sql.stacktrace": {
-          "name": "zeppelin.spark.sql.stacktrace",
-          "value": false,
-          "type": "checkbox"
-        },
-        "zeppelin.spark.useHiveContext": {
-          "name": "zeppelin.spark.useHiveContext",
-          "value": true,
-          "type": "checkbox"
-        },
-        "zeppelin.spark.printREPLOutput": {
-          "name": "zeppelin.spark.printREPLOutput",
-          "value": true,
-          "type": "checkbox"
-        },
-        "spark.cores.max": {
-          "name": "spark.cores.max",
-          "value": "",
-          "type": "number"
-        },
-        "spark.executor.memory": {
-          "name": "spark.executor.memory",
-          "value": "",
-          "type": "string"
-        },
-        "zeppelin.spark.sql.interpolation": {
-          "name": "zeppelin.spark.sql.interpolation",
-          "value": false,
-          "type": "checkbox"
-        },
-        "spark.app.name": {
-          "name": "spark.app.name",
-          "value": "Zeppelin",
-          "type": "string"
-        },
-        "zeppelin.spark.maxResult": {
-          "name": "zeppelin.spark.maxResult",
-          "value": "1000",
-          "type": "number"
-        },
-        "zeppelin.spark.ui.hidden": {
-          "name": "zeppelin.spark.ui.hidden",
-          "value": false,
-          "type": "checkbox"
-        },
-        "master": {
-          "name": "master",
-          "value": "local[*]",
-          "type": "string"
-        },
-        "zeppelin.pyspark.python": {
-          "name": "zeppelin.pyspark.python",
-          "value": "python",
-          "type": "string"
-        },
-        "args": {
-          "name": "args",
-          "value": "",
-          "type": "textarea"
-        },
-        "zeppelin.spark.enableSupportedVersionCheck": {
-          "name": "zeppelin.spark.enableSupportedVersionCheck",
-          "value": true,
-          "type": "checkbox"
-        },
-        "zeppelin.spark.useNew": {
-          "name": "zeppelin.spark.useNew",
-          "value": true,
-          "type": "checkbox"
-        },
-        "zeppelin.pyspark.useIPython": {
-          "name": "zeppelin.pyspark.useIPython",
-          "value": true,
-          "type": "checkbox"
-        },
-        "zeppelin.spark.uiWebUrl": {
-          "name": "zeppelin.spark.uiWebUrl",
-          "value": "",
-          "type": "string"
-        },
-        "zeppelin.R.render.options": {
-          "name": "zeppelin.R.render.options",
-          "value": "out.format \u003d \u0027html\u0027, comment \u003d NA, echo \u003d FALSE, results \u003d \u0027asis\u0027, message \u003d F, warning \u003d F, fig.retina \u003d 2",
-          "type": "textarea"
-        }
-      },
-      "status": "READY",
-      "interpreterGroup": [
-        {
-          "name": "spark",
-          "class": "org.apache.zeppelin.spark.SparkInterpreter",
-          "defaultInterpreter": true,
-          "editor": {
-            "language": "scala",
-            "editOnDblClick": false,
-            "completionKey": "TAB",
-            "completionSupport": true
-          }
-        },
-        {
-          "name": "sql",
-          "class": "org.apache.zeppelin.spark.SparkSqlInterpreter",
-          "defaultInterpreter": false,
-          "editor": {
-            "language": "sql",
-            "editOnDblClick": false,
-            "completionKey": "TAB",
-            "completionSupport": true
-          }
-        },
-        {
-          "name": "dep",
-          "class": "org.apache.zeppelin.spark.DepInterpreter",
-          "defaultInterpreter": false,
-          "editor": {
-            "language": "scala",
-            "editOnDblClick": false,
-            "completionKey": "TAB",
-            "completionSupport": true
-          }
-        },
-        {
-          "name": "pyspark",
-          "class": "org.apache.zeppelin.spark.PySparkInterpreter",
-          "defaultInterpreter": false,
-          "editor": {
-            "language": "python",
-            "editOnDblClick": false,
-            "completionKey": "TAB",
-            "completionSupport": true
-          }
-        },
-        {
-          "name": "ipyspark",
-          "class": "org.apache.zeppelin.spark.IPySparkInterpreter",
-          "defaultInterpreter": false,
-          "editor": {
-            "language": "python",
-            "editOnDblClick": false,
-            "completionSupport": true
-          }
-        },
-        {
-          "name": "r",
-          "class": "org.apache.zeppelin.spark.SparkRInterpreter",
-          "defaultInterpreter": false,
-          "editor": {
-            "language": "r",
-            "editOnDblClick": false,
-            "completionSupport": false
-          }
-        }
-      ],
-      "dependencies": [
-        {
-          "groupArtifactVersion": "com.datastax.spark:spark-cassandra-connector_2.11:2.4.1",
-          "local": false
-        }
-      ],
-      "option": {
-        "remote": true,
-        "port": -1,
-        "perNote": "shared",
-        "perUser": "shared",
-        "isExistingProcess": false,
-        "setPermission": false,
-        "owners": [],
-        "isUserImpersonate": false
-      }
-    },
     "pig": {
       "id": "pig",
       "name": "pig",
@@ -1165,7 +950,7 @@
         },
         "cassandra.hosts": {
           "name": "cassandra.hosts",
-          "value": "localhost",
+          "value": "cassandra",
           "type": "textarea"
         },
         "cassandra.credentials.username": {
@@ -1270,7 +1055,7 @@
         },
         "cassandra.credentials.password": {
           "name": "cassandra.credentials.password",
-          "value": "none",
+          "value": "",
           "type": "password"
         },
         "cassandra.protocol.version": {
@@ -1324,6 +1109,8 @@
       "option": {
         "remote": true,
         "port": -1,
+        "perNote": "shared",
+        "perUser": "shared",
         "isExistingProcess": false,
         "setPermission": false,
         "owners": [],
@@ -2033,8 +1820,8 @@
   },
   "interpreterBindings": {
     "2E8G7VK17": [
-      "spark-cassandra",
       "spark",
+      "cassandra",
       "spark-csv",
       "md",
       "angular",
@@ -2046,7 +1833,6 @@
       "python",
       "ignite",
       "lens",
-      "cassandra",
       "kylin",
       "elasticsearch",
       "jdbc",
@@ -2058,7 +1844,6 @@
       "sap"
     ],
     "2E8UM231K": [
-      "spark-cassandra",
       "spark",
       "md",
       "angular",
@@ -2083,7 +1868,6 @@
     ],
     "2E9GTH722": [
       "spark",
-      "spark-cassandra",
       "spark-csv",
       "md",
       "angular",
@@ -2108,7 +1892,6 @@
     ],
     "2E821NU2U": [
       "spark",
-      "spark-cassandra",
       "md",
       "angular",
       "sh",
@@ -2132,7 +1915,6 @@
     ],
     "2E9UJGZJJ": [
       "spark",
-      "spark-cassandra",
       "spark-csv",
       "md",
       "angular",
